@@ -53,7 +53,7 @@
                         <div class="post__header">
                             
                                 <div class="post__profile">
-                                    {% if post.user.profile.image %}
+                                    {% if not post.user.profile.image %}
                                     <a href="{{post.user.profile.image.url}}" class="post__avatar">
                                         
                                         <img src="{{post.user.profile.image.url}}" alt="User Picture">

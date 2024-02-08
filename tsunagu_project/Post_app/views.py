@@ -29,7 +29,7 @@ def home(request):
     for post in posts:
         group_ids.append(post.post_id)
         
-    post_items = Post.objects.filter(id__in=group_ids).all().order_by('-posted')
+    post_items = Post.objects.all().order_by('-posted')
 
     query = request.GET.get('q')
     if query:

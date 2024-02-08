@@ -50,13 +50,13 @@
                         
                         {% endif %}
                         <br><br>
-                        {% if request.user.is_authenticated and request.user != profile.user %}
+                        <!-- {% if request.user.is_authenticated and request.user != profile.user %}
                             {% if follow_status == True %}
                                 <a href="{% url 'follow' profile.user 0 %}" class="btn profile-edit-btn" style="color: red;">Unfollow</a> <br><br>
                             {% else %}
                                 <a href="{% url 'follow' profile.user 1 %}" class="btn profile-edit-btn" style="color: green;">Follow</a> <br><br>
                             {% endif %}
-                        {% endif %}
+                        {% endif %} -->
 
                         {% if request.user.is_authenticated and request.user != profile.user %}
                                 <a href="{% url 'conversation' profile.user  %}" class="btn profile-edit-btn">メッセージ</a> <br><br>
@@ -91,9 +91,9 @@
                 <div class="profile-stats">
 
                     <ul>
-                        <li><a style="text-decoration: none; color:black;" href="{% url 'profile' profile.user %}"><span class="profile-stat-count">{{posts_count}}</span>ポスト</li></a>
-                        <li><span style="text-decoration: none; color:black;" class="profile-stat-count">{{followers_count}}</span> followers</li>
-                        <li><span style="text-decoration: none; color:black;"class="profile-stat-count">{{following_count}}</span> following</li>
+                        <li><a style="text-decoration: none; color:black;" href="{% url 'profile' profile.user %}"><span class="profile-stat-count">{{posts_count}}</span>投稿</li></a>
+                        <!-- <li><span style="text-decoration: none; color:black;" class="profile-stat-count">{{followers_count}}</span> followers</li> 
+                        <li><span style="text-decoration: none; color:black;"class="profile-stat-count">{{following_count}}</span> following</li>  -->
                         <li>  {% if request.user == profile.user %}
                             <a style="text-decoration: none; color:black;" href="{% url 'profilefavourite' profile.user %}"  class="btns profeile-edit-btn">お気に入り</a>
                             {% endif %}</li>
